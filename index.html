@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <title>Balia Chunilal Cultural Association</title>
+</head>
+<body>
+    <nav class="navbar background">
+        <ul class="nav-list">
+            <div class="logo"><img src="img/logo.png" alt="LOGO"></div>
+            <!-- <li><a herf ="#home">Home</a></li> -->
+            <!-- <li><a herf ="flatmember">Flat Member Login</a></li>
+            <li><a herf ="#committee">Committee Login</a></li>
+            <li><a herf ="#admin">Admin Login</a></li> -->
+            <li><a href="flat_member.html">Flat Member Login</a></li>
+            <li><a href="committee.html">Committee Login</a></li>
+            <li><a href="admin.html">Admin Login</a></li>
+        </ul>
+        <div class="rightNav">
+            <!-- <input type="text"name="search" id="search"> -->
+            <!-- <div class="search"><input type="text"name="search" id="search"></div> -->
+            <!-- <button class="btn btn-sm">Search</button> -->
+        </div>
+    </nav>
+    <section class="background firstSection">
+        <div class="box-main">
+            <div class = "firstHalf">
+            <p class = "text-big">Chunilal Apartment</p>
+            <p class = "text-small">Garia Station Road, Boro Bottola, Behind Dishari Club, Kolkata 700084, India</p>
+            <div class="buttons">
+                <button class ="grievance-button">File a Grievance</button>
+                <button class ="writetous">Write to us</button>               
+            </div>           
+        </div>
+        <div class="secondHalf">
+            <img src = "img/apt.jpg"alt="Apartment image">
+        </div></div>
+        </section>
+    </section>
+    <script>
+        document.querySelector('.grievance-button').addEventListener('click', function() {
+            window.location.href = 'grievance.html';
+        });
+        document.querySelector('.writetous').addEventListener('click', function() {
+            window.location.href = 'writetous.html';
+        });
+    </script>
+ <style>
+    .footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .footer p {
+        margin: 0;
+    }
+    .copyright {
+        font-size: 14px;
+    }
+    .footer a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+</style>
+</head>
+<body>
+
+<footer class="footer">
+<div class="container">
+    <p class="copyright">&copy; 2023 Balia Chunilal Cultural Association. All rights reserved.</p>
+    <!-- <p>Designed by <a href="https://www.chunilalapartment.com" target="_blank">Web Designer</a></p> -->
+</div>
+</footer>
+
+</body>
+</body>
+</html>
