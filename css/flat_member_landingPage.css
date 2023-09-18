@@ -1,0 +1,11 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.landing{
+    text-align: center;
+}
+p{
+    font-family:'Times New Roman', Times, serif;
+    text-align:center;
+}
