@@ -16,6 +16,7 @@
     align-items:center;
 }
 .nav-list li{
+    flex:60;
     list-style:none;
     padding: 0px 30px;
 }
@@ -101,4 +102,22 @@
 .btn-small{
     padding: 6px 10px;
     vertical-align: middle;
+}
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+}
+.copyright {
+    font-size: 14px;
+}
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
 }
