@@ -1,35 +1,44 @@
-// JavaScript code to handle form submission and dynamic table data
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('flat-details-form');
-    const paymentTableBody = document.querySelector('#payment-history tbody');
+const userData = {
+    ownerName: "Chunilal Apartment Garia Staion Road",
+    flatNumber: "101",
+    blockNumber: "A",
+    contactDetails: "2222222222",
+};
 
-    form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        
-        // Get input values
-        // const ownerName = document.getElementById('name').value;
-        // const flatNumber = document.getElementById('fnumber').value;
-        // const blockNumber = document.getElementById('block').value;
-        // const contactDetails = document.getElementById('contact').value;
-        
-        // Create a new row in the payment history table
-        const newRow = paymentTableBody.insertRow();
-        const dateCell = newRow.insertCell(0);
-        const amountCell = newRow.insertCell(1);
-        const receiptCell = newRow.insertCell(2);
+const paymentHistory = [
+    { date: "2023-09-01", amount: "$500", receipt: "receipt1.pdf" },
+    { date: "2023-08-01", amount: "$550", receipt: "receipt2.pdf" },
+];
 
-        dateCell.textContent = new Date().toLocaleDateString();
-        amountCell.textContent = 'payment_Amount'; // Replace with actual payment amount
-        receiptCell.innerHTML = '<a href="#">Receipt Link</a>'; // Replace with actual receipt link
+function populateUserData() {
+    document.getElementById("ownerName").textContent = userData.ownerName;
+    document.getElementById("flatNumber").textContent = userData.flatNumber;
+    document.getElementById("blockNumber").textContent = userData.blockNumber;
+    document.getElementById("contactDetails").textContent = userData.contactDetails;
+}
+function populatePaymentHistory() {
+    const paymentTable = document.getElementById("paymentTable");
+    const tbody = paymentTable.querySelector("tbody");
+
+    paymentHistory.forEach((payment) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${payment.date}</td>
+            <td>${payment.amount}</td>
+            <td><a href="${payment.receipt}" target="_blank">View Receipt</a></td>
+        `;
+        tbody.appendChild(row);
     });
+}
 
-    const generateReceiptButton = document.getElementById('generate-receipt');
-    generateReceiptButton.addEventListener('click', function () {
-        // Generate PDF receipt logic here
-        alert('PDF receipt generation is not implemented in this example.');
-    });
-
+document.getElementById("generateReceiptBtn").addEventListener("click", () => {
+    alert("PDF generation functionality will be added here.");
 });
+
+populateUserData();
+populatePaymentHistory();
+
+
 function logout() {
     window.location.href = "index.html";
 }
