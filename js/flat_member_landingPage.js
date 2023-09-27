@@ -1,7 +1,7 @@
 const userData = {
-    ownerName: "Chunilal Apartment Garia Staion Road",
-    flatNumber: "101",
-    blockNumber: "A",
+    ownerName: "xyz pqrs",
+    flatNumber: "D5",
+    blockNumber: "1",
     contactDetails: "2222222222",
 };
 
@@ -41,8 +41,15 @@ function populatePaymentAmount() {
     document.getElementById("pDues").textContent = paymentAmount.pdues;
 }
 
+
 document.getElementById("generateReceiptBtn").addEventListener("click", () => {
     alert("PDF generation functionality will be added here.");
+});
+document.getElementById("makeUPayment").addEventListener("click", () => {
+    alert("You will be redirected to the payment page");
+});
+document.getElementById("makePPayment").addEventListener("click", () => {
+    alert("You will be redirected to the payment page");
 });
 
 populateUserData();
@@ -51,8 +58,22 @@ populatePaymentAmount();
 
 
 function logout() {
+    localStorage.clear();
+    sessionStorage.clear();
     window.location.href = "index.html";
 }
+// function clearSession() {
+//     sessionStorage.clear(); 
+// }
+window.onpopstate = function(event) {
+    if (event.state && event.state.clearSession) {
+        clearSession();
+    }
+};
+function clearSessionOnBackOrForward() {
+    history.pushState({ clearSession: true }, null, null);
+}
+sessionStorage.setItem('key', 'value');
 document.getElementById("logoutButton").addEventListener("click", logout);
 
 

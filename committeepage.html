@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Balia Chunilal Cultural Association Committee</title>
-    <button id="logoutButton">Logout</button>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
     <script>
         function logout() {
             window.location.href = "index.html";
@@ -16,16 +16,25 @@
 <body>
     <header>
         <h1>Welcome to the Balia Chunilal Cultural Association Committee</h1>
+        <button id="logoutButton">Logout</button>
     </header>
     <nav>
-        <ul>
-            <!-- <li><a href="#">Home</a></li> -->
-            <li><a href="#">Announcements</a></li>
-            <li><a href="#">Meetings</a></li>
-            <li><a href="#">Accounts</a></li>
+        <ul id="menu">
+            <li><a href="committeepage.html">Home</a></li>
+            <li><a href="cm_announcement.html">Announcements</a></li>
+            <li><a href="cm_meeting.html">Meetings</a></li>
+            <li><a href="cm_account.html">Accounts</a></li>
+            <!-- <li><a href="grievance">Grievance</a></li>
+            <li><a href="queries">Queries</a></li> -->
         </ul>
     </nav>
+    <div id="content">
+    </div>
     <main>
+        <section id="home">
+            <div id="home-details">
+            </div>
+        </section>
         <section id="announcements">
             <h2>Latest Announcements</h2>
             <div id="announcement-list">
@@ -34,6 +43,21 @@
         <section id="meetings">
             <h2>Upcoming Meetings</h2>
             <div id="meeting-list">
+            </div>
+        </section>
+        <!-- <section id="accounts">
+            <h2>Accounts</h2>
+            <div id="accounts-list">
+            </div>
+        </section> -->
+        <section id="grievance">
+            <h2>Grievance</h2>
+            <div id="grievance-list">
+            </div>
+        </section>
+        <section id="queries">
+            <h2>Queries</h2>
+            <div id="queries-list">
             </div>
         </section>
     </main>

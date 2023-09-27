@@ -6,9 +6,15 @@ const announcementsData = [
 
 const meetingsData = [
     { date: "2023-08-30", time: "10:00 AM", location: "Community Center" },
-    { date: "2023-09-15", time: "2:00 PM", location: "Conference Room" }
 ];
 
+const grievanceData = [
+    {gmessage: "The grivenaces are below"}
+]
+
+const queriesData =[
+    {qmessage: "The queries are below"}
+]
 
 function displayAnnouncements() {
     const announcementList = document.getElementById("announcement-list");
@@ -40,5 +46,74 @@ function displayMeetings() {
     });
 }
 
+function displayGrievances() {
+    const grievanceList = document.getElementById("grievance-list");
+    grievanceList.innerHTML = '';
+
+    grievanceData.forEach(grievance => {
+        const grievanceItem = document.createElement("div");
+        grievanceItem.classList.add("grievance-list");
+        grievanceItem.innerHTML = `
+            <p>${grievance.gmessage}</p>
+        `;
+        grievanceList.appendChild(grievanceItem);
+    });
+}
+
+function displayQueries() {
+    const queriesList = document.getElementById("queries-list");
+    queriesList.innerHTML = '';
+
+    queriesData.forEach(queries => {
+        const queriesItem = document.createElement("div");
+        queriesItem.classList.add("queries-list");
+        queriesItem.innerHTML = `
+            <p>${queries.qmessage}</p>
+        `;
+        queriesList.appendChild(queriesItem);
+    });
+}
+
 displayAnnouncements();
 displayMeetings();
+displayGrievances();
+displayQueries();
+
+function logout() {
+    localStorage.clear();
+    sessionStorage.clear();
+    window.location.href = "index.html";
+}
+// function clearSession() {
+//     sessionStorage.clear(); 
+// }
+window.onpopstate = function(event) {
+    if (event.state && event.state.clearSession) {
+        clearSession();
+    }
+};
+function clearSessionOnBackOrForward() {
+    history.pushState({ clearSession: true }, null, null);
+}
+sessionStorage.setItem('key', 'value');
+document.getElementById("logoutButton").addEventListener("click", logout);
+
+document.addEventListener("DOMContentLoaded", function() {
+    const menuItems = document.querySelectorAll("menu li a");
+    const contentDiv = document.getElementById("content");
+
+    menuItems.forEach(item => {
+        item.addEventListener("click", function(event) {
+            event.preventDefault(); 
+            const targetSectionID = event.target.getAttribute("href").substring(1);
+            
+            loadContent(targetSectionID);
+        });
+    });
+    function loadContent(sectionID) {
+        const sectionContent = document.getElementById(sectionID + "-content").innerHTML;
+        contentDiv.innerHTML = sectionContent;
+    }
+});
+
+
