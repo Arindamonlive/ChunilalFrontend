@@ -6,9 +6,14 @@ const userData = {
 };
 
 const paymentHistory = [
-    { date: "2023-09-01", amount: "$500", receipt: "receipt1.pdf" },
-    { date: "2023-08-01", amount: "$550", receipt: "receipt2.pdf" },
+    { date: "2023-09-01", amount: "Rs 500.00", receipt: "receipt1.pdf" },
+    { date: "2023-08-01", amount: "Rs 550.00", receipt: "receipt2.pdf" },
 ];
+
+const paymentAmount = {
+    udues: "Rs.100.00", 
+    pdues: "Rs.200.00",
+};
 
 function populateUserData() {
     document.getElementById("ownerName").textContent = userData.ownerName;
@@ -31,12 +36,18 @@ function populatePaymentHistory() {
     });
 }
 
+function populatePaymentAmount() {
+    document.getElementById("uDues").textContent = paymentAmount.udues;
+    document.getElementById("pDues").textContent = paymentAmount.pdues;
+}
+
 document.getElementById("generateReceiptBtn").addEventListener("click", () => {
     alert("PDF generation functionality will be added here.");
 });
 
 populateUserData();
 populatePaymentHistory();
+populatePaymentAmount();
 
 
 function logout() {

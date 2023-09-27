@@ -15,10 +15,10 @@
     <div class="container">
         <div class="left-column">
             <h2>Flat Owner's Details</h2>
-            <p>Owner's Name: <span id="ownerName"></span></p>
-            <p>Flat Number: <span id="flatNumber"></span></p>
-            <p>Block Number: <span id="blockNumber"></span></p>
-            <p>Contact Details: <span id="contactDetails"></span></p>
+            <p><span id="ownerName"></span></p>
+            <p><span id="flatNumber"></span></p>
+            <p><span id="blockNumber"></span></p>
+            <p><span id="contactDetails"></span></p>
         </div>
         <div class="right-column">
             <h2>Payment History</h2>
@@ -36,6 +36,13 @@
             </table>
             <button id="generateReceiptBtn">Generate Receipt PDF</button>
         </div>
+    </div>
+    <div class="payment-section">
+        <h2>Make a Payment</h2>
+        <p><strong>Upcoming Dues:</strong><span id="uDues"></span></p>
+        <p><strong>Pending Dues:</strong><span id="pDues"></span></p>
+        <button id="makePayment">Pay Upcoming Dues</button>
+        <button id="makePayment">Pay Pending Dues</button>
     </div>
     <script src="../js/flat_member_landingPage.js"></script>
 </body>

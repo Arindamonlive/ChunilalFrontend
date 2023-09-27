@@ -49,3 +49,15 @@ th, td {
     color: white;
     padding: 0.1%;
 }
+.payment-section {
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#paymentAmount {
+    width: 50%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
