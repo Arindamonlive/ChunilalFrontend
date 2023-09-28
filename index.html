@@ -8,8 +8,8 @@
     <title>Balia Chunilal Cultural Association</title>
 </head>
 <body>
-    <nav class="navbar background">
-        <ul class="nav-list">
+    <nav class="navbar background h-nav-resp">
+        <ul class="nav-list v-class-resp">
             <!-- <div class="logo"><img src="img/logo.png" alt="LOGO"></div> -->
             <!-- <li><a herf ="#home">Home</a></li> -->
             <!-- <li><a herf ="flatmember">Flat Member Login</a></li>
@@ -19,35 +19,44 @@
             <li><a href="committee.html">Committee Login</a></li>
             <li><a href="admin.html">Admin Login</a></li>
         </ul>
-        <div class="rightNav">
-            <!-- <input type="text"name="search" id="search"> -->
-            <!-- <div class="search"><input type="text"name="search" id="search"></div> -->
-            <!-- <button class="btn btn-sm">Search</button> -->
+        <!-- <div class="rightNav v-class">
+            <input type="text"name="search" id="search">
+            <div class="search"><input type="text"name="search" id="search"></div>
+            <button class="btn btn-sm">Search</button>
+        </div> -->
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
         </div>
     </nav>
     <section class="background firstSection">
         <div class="box-main">
             <div class = "firstHalf">
-            <p class = "text-big">Chunilal Apartment</p>
+            <p class = "text-big">Welcome to Balia Chunilal Cultural Association</p>
             <p class = "text-small">Garia Station Road, Boro Bottola, Behind Dishari Club, Kolkata 700084, India</p>
             <div class="buttons">
-                <button class ="grievance-button">File any Grievance</button>
+                <button class ="grievance-button">File any grievance</button>
                 <button class ="writetous">Write to us</button>               
             </div>           
         </div>
         <div class="secondHalf">
             <img src = "img/apt.jpg"alt="Apartment image">
+                <main>
+                    <section id="announcements">
+                        <h2>Latest Announcements:</h2>
+                        <div id="announcement-list">
+                        </div>
+                    </section>
+                    <section id="meetings">
+                        <h2>Upcoming Meetings: </h2>
+                        <div id="meeting-list">
+                        </div>
+                    </section>
+                </main>               
         </div></div>
         </section>
     </section>
-    <script>
-        document.querySelector('.grievance-button').addEventListener('click', function() {
-            window.location.href = 'grievance.html';
-        });
-        document.querySelector('.writetous').addEventListener('click', function() {
-            window.location.href = 'writetous.html';
-        });
-    </script>
  <style>
     /* .footer {
         background-color: #333;
@@ -78,7 +87,7 @@
     <!-- <p>Designed by <a href="https://www.chunilalapartment.com" target="_blank">Web Designer</a></p> -->
 </div>
 </footer>
-
 </body>
+<script src ="../js/script.js"></script>
 </body>
 </html>

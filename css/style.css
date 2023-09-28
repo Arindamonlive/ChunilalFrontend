@@ -1,8 +1,10 @@
 *{
     margin: 0;
     padding: 0;
+
 }
 .navbar{
+    padding: 1%;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -29,7 +31,7 @@
 }
 .rightNav{
     /* background-color: blueviolet; */
-    width:50%;
+    width:0%;
     text-align: right;
     padding: 23px;
 }
@@ -85,12 +87,13 @@
     margin:auto;
 }
 .text-big{
-    font-size: 41px;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
 }
 .text-small{
     font-size: 18px;
 }
-.btn{
+.grievance-button{
     padding: 8px 20 px;
     margin: 7px 3px;
     border-radius: 8px;
@@ -98,15 +101,41 @@
     background: none;
     color: white;
     cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    border-color: white;
+    border-width: 1px;
+    text-align: center;
+}
+.writetous{
+    padding: 8px 20 px;
+    margin: 7px 3px;
+    border-radius: 8px;
+    font-size: 18px;
+    background: none;
+    color: white;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    border-color: white;
+    border-width: 1px;
+    text-align: center;
+}
+/* .btn{
+    padding: 8px 20 px;
+    margin: 7px 3px;
+    border-radius: 8px;
+    font-size: 225px;
+    background: none;
+    color: white;
+    cursor: pointer;
 }
 .btn-small{
     padding: 6px 10px;
     vertical-align: middle;
-}
+} */
 .footer {
     background-color: #333;
     color: #fff;
-    padding: 20px 0;
+    padding: 0px 0;
     text-align: center;
 }
 
@@ -120,4 +149,52 @@
     color: #fff;
     text-decoration: none;
     transition: color 0.3s;
+}
+.burger{
+    display: none;
+    position:absolute;
+    cursor:pointer;
+    right: 5%;
+    top:15px;
+}
+.line{
+    width:33px;
+    background-color: white;
+    height:1px;
+    margin: 3px 3px;
+}
+@media only screen and (max-width:1024px){
+    .nav-list{
+        flex-direction: column;
+        text-align: center;
+    }
+    .navbar{
+        height: 90px;
+        flex-direction: column;
+        transition: all 0.7s ease-out;
+    }
+    .burger{
+        display: block;
+    }
+    .h-nav-resp{
+        height: 50px;
+    }
+    .v-class-resp{
+        opacity: 0%;
+    }
+    .firstHalf{
+        flex-direction:column;
+    }
+    .text-big{
+        font-size: 25px;
+        text-align: left;
+    }
+    .text-small{
+        font-size: 15px;
+        text-align: left;
+    }
+    .secondHalf{
+        font-size: small;
+        text-align: right;
+    }
 }

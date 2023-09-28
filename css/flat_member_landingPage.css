@@ -61,3 +61,17 @@ th, td {
     padding: 5px;
     margin-bottom: 10px;
 }
+@media only screen and (max-width:1024px){
+    .left-column{
+        flex-direction: column;
+        text-align: center;
+    }
+    .right-column{
+        flex-direction: column;
+        text-align: center;
+    }
+    .payment-section{
+        flex-direction: column;
+        text-align: center;
+    }
+}
