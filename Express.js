@@ -1,13 +1,12 @@
-import express from "express";
-import cors from "cors";
+const express = require("express");
+const cors = require("cors");
 
 const app = express();
 
-// Enable CORS for your frontend origin
-app.use(cors({ origin: "http://127.0.0.1:5500" }));
+app.use(cors({ origin: "*" }));
 
-// Rest of your server code...
-
-app.listen(8080, () => {
+app.listen(8080
+    , () => {
   console.log("Server is running on port 8080");
 });
+

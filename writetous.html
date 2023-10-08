@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Write to us</title>
-    <link rel="stylesheet" href="css\gstyle.css">
+    <link rel="stylesheet" href="css\loginstyles.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <title>Write To Us</title>
 </head>
 <body>
-    <header>
-        <h1>Please submit your query or request</h1>
-    </header>
-    
-    <main>
-        <h2>Please describe your query or request:</h2>
-        <textarea rows="5" cols="50" placeholder="Type your query or request here..."></textarea>
-        
-        <button class="submit-button">Submit</button>
-    </main>
+    <div class="login-container">
+        <h2>Write To Us</h2>
+        <form id="login-form">
+            <div class="input-container">
+                <label for="_entry">Queries</label>
+                <input type="text" id="queries" name="queries" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="js/quires.js"></script>
 </body>
 </html>
