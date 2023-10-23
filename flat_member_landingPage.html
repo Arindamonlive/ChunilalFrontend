@@ -22,11 +22,14 @@
         </div>
         <div class="right-column">
             <h2>Payment History</h2>
+            <div class="table-container">
             <table id="paymentTable">
                 <thead>
                     <tr>
+                        <th>Id</th>
                         <th>Date</th>
-                        <th>Amount</th>
+                        <th>(Upcoming Due) Rs.</th>
+                        <th>(Pending Due) Rs.</th>
                         <th>Receipt</th>
                     </tr>
                 </thead>
@@ -34,6 +37,7 @@
                     <!-- Payment history rows will be added here dynamically -->
                 </tbody>
             </table>
+            </div>
             <button id="generateReceiptBtn">Generate Receipt PDF</button>
         </div>
     </div>

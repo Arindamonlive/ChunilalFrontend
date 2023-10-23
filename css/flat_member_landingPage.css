@@ -24,9 +24,14 @@ header {
     flex: 1;
     padding: 20px;
 }
+.table-container {
+    max-height: 150px; /* Adjust the height as needed */
+    overflow-y: scroll; /* Add a vertical scrollbar when needed */
+}
 table {
     width: 100%;
     border-collapse: collapse;
+    
 }
 table, th, td {
     border: 1px solid #ccc;
@@ -34,6 +39,12 @@ table, th, td {
 th, td {
     padding: 8px;
     text-align: left;
+}
+thead {
+    background-color: #f2f2f2;
+    position: sticky;
+    top: 0; /* Stick to the top of the container */
+    z-index: 1; /* Ensure the header is above the table body */
 }
 .generate-button {
     margin-top: 20px;
