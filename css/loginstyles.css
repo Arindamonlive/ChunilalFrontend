@@ -28,6 +28,10 @@ h2 {
     text-align: center;
 }
 
+.password-hidden {
+    font-family: '•'; 
+}
+
 label {
     display: block;
     margin-bottom: 5px;
@@ -41,6 +45,7 @@ input {
     border: 1px solid #ccc;
     border-radius: 3px;
 }
+
 
 button {
     background-color: #007bff;
