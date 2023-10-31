@@ -3,15 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balia Chunilal Cultural Association Committee</title>
+    <title>Committee page Balia Chunilal Cultural Association</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.png">
-    <script>
-        function logout() {
-            window.location.href = "index.html";
-        }
-        document.getElementById("logoutButton").addEventListener("click", logout);
-    </script>
     <link rel="stylesheet" href="css\cmlstyles.css">
+
+    
 </head>
 <body>
     <header>
@@ -20,10 +16,14 @@
     </header>
     <nav>
         <ul id="menu">
-            <li><a href="committeepage.html">Home</a></li>
+            <!-- <li><a href="committeepage.html">Home</a></li> -->
             <li><a href="cm_announcement.html">Announcements</a></li>
-            <li><a href="cm_meeting.html">Meetings</a></li>
+            <!-- <li><a href="cm_meeting.html">Meetings</a></li> -->
             <li><a href="cm_account.html">Accounts</a></li>
+            <li><a href="cm_user.html">User</a></li>
+            <li><a href="cm_flatMember.html">FM Amount</a></li>
+            <li><a href="cm_flatSupport.html">Flat Support</a></li>
+            <li><a href="cm_flatAccount.html">Flat Support</a></li>
             <!-- <li><a href="grievance">Grievance</a></li>
             <li><a href="queries">Queries</a></li> -->
         </ul>
@@ -40,11 +40,11 @@
             <div id="announcement-list">
             </div>
         </section>
-        <section id="meetings">
+        <!-- <section id="meetings">
             <h2>Upcoming Meetings</h2>
             <div id="meeting-list">
             </div>
-        </section>
+        </section> -->
         <!-- <section id="accounts">
             <h2>Accounts</h2>
             <div id="accounts-list">
@@ -65,5 +65,16 @@
         <p>&copy; 2023 Balia Chunilal Cultural Association Committee</p>
     </footer>
     <script src="js\cmlscript.js"></script>
+    <script>
+        // Place the JavaScript code at the end of the body
+        function logout() {
+            window.location.href = "index.html"; // Make sure "index.html" exists
+        }
+        
+        // Wait for the DOM to be ready before adding the event listener
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("logoutButton").addEventListener("click", logout);
+        });
+    </script>
 </body>
 </html>

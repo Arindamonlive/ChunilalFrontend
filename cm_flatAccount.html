@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flat Account Balia Chunilal Cultural Association Committee</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" href="css/cmlfmstyles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Balia Chunilal Cultural Association Committee</h1>
+        <button id="logoutButton">Logout</button>
+    </header>
+    <nav>
+        <!-- <div class="search-panel">
+            <input type="text" id="search-box">
+            <button id="search-button">Search</button>
+        </div> -->
+        <input type="text" id="search-box">
+        <button id="search-button">Search</button>
+        
+    </nav>
+    <div class="container">
+        <div class="left-column">
+            <h2>Flat Owner's Details</h2>
+            <p>Onwer's Name: <span id="ownerName"></span></p>
+            <p>Flat Number: <span id="flatNumber"></span></p>
+            <p>Block Number: <span id="blockNumber"></span></p>
+            <p>Phone Number: <span id="contactDetails"></span></p>
+        </div>
+
+    <div class="right-column">
+        <h2>Payment History</h2>
+        <div class="table-container">
+        <table id="paymentTable">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Date</th>
+                    <th>(Upcoming Due) Rs.</th>
+                    <th>(Pending Due) Rs.</th>
+                    <!-- <th>Receipt</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Payment history rows will be added here dynamically -->
+            </tbody>
+        </table>
+        </div>
+        <!-- <button id="generateReceiptBtn">Generate Receipt PDF</button> -->
+    </div>
+</div>
+<div class="payment-section">
+    <h2>Payment Status</h2>
+    <p><strong>Upcoming Dues: Rs </strong><span id="uDues"></span></p>
+    <p><strong>Pending Dues: Rs </strong><span id="pDues"></span></p>
+</div>
+    <div id="content">
+        <!-- Add search results here -->
+    </div>
+    <footer>
+        <p>&copy; 2023 Balia Chunilal Cultural Association Committee</p>
+    </footer>
+    <script src="js/cmlflatAccountscript.js"></script>
+    <script>
+        function logout() {
+            window.location.href = "index.html"; 
+        }
+    </script>
+</body>
+</html>

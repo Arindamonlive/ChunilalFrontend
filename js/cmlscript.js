@@ -1,58 +1,105 @@
 
-const announcementsData = [
-    { title: "Important Update", content: "Write the important and upcoming updates" },
-    { title: "Maintenance Notice", content: "Maintainance related notice" }
-];
+// const meetingsData = [
+//     { date: "2023-08-30", time: "10:00 AM", location: "Community Center" },
+// ];
 
-const meetingsData = [
-    { date: "2023-08-30", time: "10:00 AM", location: "Community Center" },
-];
+const announcementsData = [ { title: ""}];
+
+
 
 const grievanceData = [
-    {gmessage: "The grivenaces are below"}
+    {gmessage: ""}
 ]
 
 const queriesData =[
-    {qmessage: "The queries are below"}
+    {qmessage: ""}
 ]
 
-function displayAnnouncements() {
+async function announcement() {
+    try {
+        const response = await fetch("http://localhost:8080/ann/getann");
+        if (response.ok) {
+            const data = await response.json();
+            console.log("API Response:", data);
+
+            // Clear existing data
+            announcementsData.length = 0;
+
+            // Push announcements from the API into the announcementsData array
+            data.forEach(item => {
+                announcementsData.push({
+                    title: item.announce
+                });
+            });
+        } else {
+            console.error("Error fetching.");
+        }
+    } catch (error) {
+        console.error("An error occurred:", error);
+    }
+}
+
+
+function populateAnnouncementsData() {
     const announcementList = document.getElementById("announcement-list");
     announcementList.innerHTML = '';
 
-    announcementsData.forEach(announcement => {
+ 
+    const mostRecentAnnouncement = announcementsData[announcementsData.length - 1];
+
+    if (mostRecentAnnouncement) {
         const announcementItem = document.createElement("div");
         announcementItem.classList.add("announcement-item");
+
         announcementItem.innerHTML = `
-            <h3>${announcement.title}</h3>
-            <p>${announcement.content}</p>
+            <p>${mostRecentAnnouncement.title}</p>
         `;
         announcementList.appendChild(announcementItem);
-    });
-}
-function displayMeetings() {
-    const meetingList = document.getElementById("meeting-list");
-    meetingList.innerHTML = '';
-
-    meetingsData.forEach(meeting => {
-        const meetingItem = document.createElement("div");
-        meetingItem.classList.add("meeting-item");
-        meetingItem.innerHTML = `
-            <p>Date: ${meeting.date}</p>
-            <p>Time: ${meeting.time}</p>
-            <p>Location: ${meeting.location}</p>
-        `;
-        meetingList.appendChild(meetingItem);
-    });
+    }
 }
 
-function displayGrievances() {
+(async () => {
+    await announcement(); 
+    populateAnnouncementsData();
+})();
+
+
+async function grievance() {
+    try {
+        const response = await fetch("http://localhost:8080/comp/getcmp");
+        if (response.ok) {
+            const data = await response.json();
+            console.log("API Response:", data);
+
+            grievanceData.length = 0;
+
+            data.forEach(item => {
+                const timestamp = new Date(item.createdAt);
+                const date = timestamp.toLocaleDateString();
+                grievanceData.push({
+                    gmessage: date + ">>>>>" +item.cmp
+                });
+            });
+        } else {
+            console.error("Error fetching.");
+        }
+    } catch (error) {
+        console.error("An error occurred:", error);
+    }
+}
+
+
+function populateGrievanceData() {
     const grievanceList = document.getElementById("grievance-list");
     grievanceList.innerHTML = '';
 
-    grievanceData.forEach(grievance => {
+    // Get the 5 most recent grievances
+    const latestGrievances = grievanceData.slice(-5);
+
+    latestGrievances.forEach(grievance => {
         const grievanceItem = document.createElement("div");
         grievanceItem.classList.add("grievance-list");
+
         grievanceItem.innerHTML = `
             <p>${grievance.gmessage}</p>
         `;
@@ -60,13 +107,52 @@ function displayGrievances() {
     });
 }
 
-function displayQueries() {
+(async () => {
+    await grievance(); 
+    populateGrievanceData();
+})();
+
+
+
+
+
+
+async function queries() {
+    try {
+        const response = await fetch("http://localhost:8080/info/getwtu");
+        if (response.ok) {
+            const data = await response.json();
+            console.log("API Response:", data);
+
+            queriesData.length = 0;
+
+            data.forEach(item => {
+                const timestamp = new Date(item.createdAt);
+                const date = timestamp.toLocaleDateString();
+                queriesData.push({
+                    qmessage: date + ">>>>>" +item.wtu
+                });
+            });
+        } else {
+            console.error("Error fetching.");
+        }
+    } catch (error) {
+        console.error("An error occurred:", error);
+    }
+}
+
+
+function populateQueriesData() {
     const queriesList = document.getElementById("queries-list");
     queriesList.innerHTML = '';
 
-    queriesData.forEach(queries => {
+    // Get the 5 most recent grievances
+    const latestQueries = queriesData.slice(-4);
+
+    latestQueries.forEach(queries => {
         const queriesItem = document.createElement("div");
         queriesItem.classList.add("queries-list");
+
         queriesItem.innerHTML = `
             <p>${queries.qmessage}</p>
         `;
@@ -74,10 +160,43 @@ function displayQueries() {
     });
 }
 
-displayAnnouncements();
-displayMeetings();
-displayGrievances();
-displayQueries();
+(async () => {
+    await queries(); 
+    populateQueriesData();
+})();
+
+// function displayGrievances() {
+//     const grievanceList = document.getElementById("grievance-list");
+//     grievanceList.innerHTML = '';
+
+//     grievanceData.forEach(grievance => {
+//         const grievanceItem = document.createElement("div");
+//         grievanceItem.classList.add("grievance-list");
+//         grievanceItem.innerHTML = `
+//             <p>${grievance.gmessage}</p>
+//         `;
+//         grievanceList.appendChild(grievanceItem);
+//     });
+// }
+
+// function displayQueries() {
+//     const queriesList = document.getElementById("queries-list");
+//     queriesList.innerHTML = '';
+
+//     queriesData.forEach(queries => {
+//         const queriesItem = document.createElement("div");
+//         queriesItem.classList.add("queries-list");
+//         queriesItem.innerHTML = `
+//             <p>${queries.qmessage}</p>
+//         `;
+//         queriesList.appendChild(queriesItem);
+//     });
+// }
+
+// displayAnnouncements();
+// displayMeetings();
+// displayGrievances();
+// displayQueries();
 
 function logout() {
     localStorage.clear();

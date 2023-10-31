@@ -101,6 +101,9 @@ async function fetchPaymentTable() {
             const paymentTable = document.getElementById("paymentTable");
             const tbody = paymentTable.querySelector("tbody");
 
+            // Sort the data by payment date in descending order
+            data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
             data.forEach((paymentData) => {
                 // Create a new payment object and push it to the paymentHistory array
                 const payment = {
@@ -233,8 +236,8 @@ await fetchamountanddues();
 
 
 
-document.getElementById("generateReceiptBtn").addEventListener("click", () => {
-    alert("PDF generation functionality will be added here.");
+document.getElementById("support").addEventListener("click", () => {
+    window.location.href = 'grievance.html';
 });
 
 async function makeUPayment() {
@@ -244,17 +247,17 @@ async function makeUPayment() {
     // Assuming you have a payment gateway or some API to process the payment
     // You can make an API request to initiate the payment process
     try {
-        const response = await fetch(`http://localhost:8080/flat-details`, {
+        const response = await fetch(`http://localhost:8080/payment/test`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ amount: amountToPay }),
+            body: JSON.stringify({ "flatDetails": userData.contactDetails,"paymentAmount": amountToPay}),
         });
 
         if (response.ok) {
             // Payment was successful, you can handle the success scenario
-            alert(`Payment of $${amountToPay} was successful.`);
+            alert(`Payment of Rs.${amountToPay} was successful.`);
         } else {
             // Handle payment failure
             alert("Payment failed. Please try again later.");
@@ -277,17 +280,17 @@ async function makePPayment() {
     // Assuming you have a payment gateway or some API to process the payment
     // You can make an API request to initiate the payment process
     try {
-        const response = await fetch(`http://localhost:8080/flat-details`, {
+        const response = await fetch(`http://localhost:8080/payment/test`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ amount: amountToPay }),
+            body: JSON.stringify({ "flatDetails": userData.contactDetails,"dues": amountToPay}),
         });
 
         if (response.ok) {
             // Payment was successful, you can handle the success scenario
-            alert(`Payment of $${amountToPay} was successful.`);
+            alert(`Payment of Rs.${amountToPay} was successful.`);
         } else {
             // Handle payment failure
             alert("Payment failed. Please try again later.");

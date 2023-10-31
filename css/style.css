@@ -95,8 +95,8 @@
 }
 .grievance-button{
     padding: 8px 20 px;
-    margin: 7px 3px;
-    border-radius: 8px;
+    margin: 8px 4px;
+    border-radius: 2px;
     font-size: 18px;
     background: none;
     color: white;
@@ -108,8 +108,8 @@
 }
 .writetous{
     padding: 8px 20 px;
-    margin: 7px 3px;
-    border-radius: 8px;
+    margin: 8px 4px;
+    border-radius: 2px;
     font-size: 18px;
     background: none;
     color: white;
