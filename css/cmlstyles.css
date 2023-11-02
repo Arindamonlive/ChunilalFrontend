@@ -2,12 +2,14 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background: url('../img/cmlanding\ page.jpg');
+    background-size:cover;
+    background-blend-mode:lighten;
 }
 
 header {
     margin: 0;
-    background-color: #333;
+    background-color:chocolate;
     color: #fff;
     text-align: center;
     padding: 0px 0;
@@ -16,7 +18,7 @@ header {
 nav ul {
     list-style-type: none;
     padding: 0;
-    background-color: #333;
+    background-color: black;
     overflow: hidden;
 }
 
