@@ -21,6 +21,27 @@ body {
 .grievance-button:hover {
     background-color: #cc0000;
 }
+.home{
+    background-color: violet;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 150%;
+}
+
+
+
+
+.input-container {
+    margin: 10px 0;
+}
+
+.input-container input {
+    width: 50%; /* Make the input element 100% wide within the container */
+    padding: 10px; /* Add padding for spacing inside the input */
+    font-size: 16px; /* Adjust the font size */
+}
+
+
+
 @media only screen and (max-width:1024px){
     .rows{
         width:auto;

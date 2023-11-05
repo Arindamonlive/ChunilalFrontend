@@ -10,7 +10,7 @@
 <body>
     <header>
         <h1>Welcome to the Balia Chunilal Cultural Association Committee</h1>
-        <button id="logoutButton">Logout</button>
+        
     </header>
     <nav>
         <!-- <div class="search-panel">
@@ -19,6 +19,7 @@
         </div> -->
         <input type="text" id="search-box">
         <button id="search-button">Search</button>
+        <button class="home" type="submit">Home</button>
         
     </nav>
     <div class="container">
@@ -38,8 +39,8 @@
                 <tr>
                     <th>Id</th>
                     <th>Date</th>
-                    <th>(Upcoming Due) Rs.</th>
-                    <th>(Pending Due) Rs.</th>
+                    <th>(Monthly Maintanance Paid) Rs.</th>
+                    <th>(Due Paid) Rs.</th>
                     <!-- <th>Receipt</th> -->
                 </tr>
             </thead>
@@ -64,9 +65,9 @@
     </footer>
     <script src="js/cmlflatAccountscript.js"></script>
     <script>
-        function logout() {
-            window.location.href = "index.html"; 
-        }
+        document.querySelector(".home").addEventListener("click", function () {
+            window.location.href = "committeepage.html";
+        });
     </script>
 </body>
 </html>

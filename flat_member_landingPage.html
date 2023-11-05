@@ -28,8 +28,8 @@
                     <tr>
                         <th>Id</th>
                         <th>Date</th>
-                        <th>(Upcoming Due) Rs.</th>
-                        <th>(Pending Due) Rs.</th>
+                        <th>(Monthly Maintanance Paid) Rs.</th>
+                        <th>(Due Paid) Rs.</th>
                         <th>Receipt</th>
                     </tr>
                 </thead>
@@ -42,10 +42,11 @@
     </div>
     <div class="payment-section">
         <h2>Make a Payment</h2>
-        <p><strong>Upcoming Dues: Rs </strong><span id="uDues"></span></p>
-        <p><strong>Pending Dues: Rs </strong><span id="pDues"></span></p>
-        <button id="makeUPayment">Pay Upcoming Dues</button>
-        <button id="makePPayment">Pay Pending Dues</button>
+        <p>Monthly maintenance accepts single payments per month.</p>
+        <p><strong>Monthly Maintanance: Rs </strong><span id="uDues"></span></p>
+        <p><strong>Dues: Rs </strong><span id="pDues"></span></p>
+        <button id="makeUPayment">Pay Monthly Maintanance</button>
+        <button id="makePPayment">Pay Dues</button>
     </div>
     <script src="../js/flat_member_landingPage.js"></script>
 </body>

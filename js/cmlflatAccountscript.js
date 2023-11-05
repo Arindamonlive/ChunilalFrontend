@@ -17,11 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add an event listener to the "Search" button
     document.getElementById("search-button").addEventListener("click", async function () {
         // This code will execute when the "Search" button is clicked
-
+    
         // Retrieve the search input value from the input box
         const searchInput = document.getElementById("search-box").value;
         userData.contactDetails = searchInput;
-
+    
+        // Clear existing data before making new requests
+        clearUserData();
+    
         // Call the fetchOwnerName function to fetch user data
         await fetchOwnerName();
         // Call the fetchflatandBlockNumber function to fetch flat and block number
@@ -31,7 +34,28 @@ document.addEventListener("DOMContentLoaded", function () {
         // Call the fetchamountanddues function to fetch payment amounts and dues
         await fetchamountanddues();
     });
-
+    
+    // Function to clear user data on the page
+    function clearUserData() {
+        userData.ownerName = "";
+        userData.flatNumber = "";
+        userData.blockNumber = "";
+        paymentAmount.udues = "";
+        paymentAmount.pdues = "";
+    
+        document.getElementById("ownerName").textContent = "";
+        document.getElementById("flatNumber").textContent = "";
+        document.getElementById("blockNumber").textContent = "";
+        document.getElementById("contactDetails").textContent = "";
+        document.getElementById("uDues").textContent = "";
+        document.getElementById("pDues").textContent = "";
+    
+        // Clear the payment history table
+        const paymentTable = document.getElementById("paymentTable");
+        const tbody = paymentTable.querySelector("tbody");
+        tbody.innerHTML = '';
+    }
+    
     // Function to make a GET request and update ownerName
     async function fetchOwnerName() {
         try {
@@ -86,8 +110,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 const paymentTable = document.getElementById("paymentTable");
                 const tbody = paymentTable.querySelector("tbody");
     
-                // Clear existing rows from the table
-                tbody.innerHTML = '';
+                // Sort the data by payment date in descending order
+                data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     
                 data.forEach((paymentData) => {
                     // Create a new payment object and push it to the paymentHistory array
@@ -96,30 +120,32 @@ document.addEventListener("DOMContentLoaded", function () {
                         date: paymentData.createdAt,
                         updues: paymentData.paymentAmount,
                         penddues: paymentData.dues,
-                        // receipt: paymentData.receipt
+                        receipt: paymentData.receipt
                     };
                     paymentHistory.push(payment);
     
                     // Create a "View Receipt" link
-                    // const viewReceiptLink = document.createElement("a");
-                    // viewReceiptLink.href = payment.receipt;
-                    // viewReceiptLink.textContent = "View Receipt";
-                    // viewReceiptLink.target = "_blank";
-                    // viewReceiptLink.classList.add("view-receipt");
-                    // viewReceiptLink.setAttribute("data-payment-id", paymentData.id);
+                    const viewReceiptLink = document.createElement("a");
+                    viewReceiptLink.href = payment.receipt;
+                    viewReceiptLink.textContent = "View Receipt";
+                    viewReceiptLink.target = "_blank";
+                    viewReceiptLink.classList.add("view-receipt");
+                    viewReceiptLink.setAttribute("data-payment-id", paymentData.id);
     
                     // Create a row and cells
                     const row = document.createElement("tr");
                     const idCell = document.createElement("td");
                     idCell.textContent = payment.id;
                     const dateCell = document.createElement("td");
-                    dateCell.textContent = payment.date;
+                    const timestamp = payment.date; // Assuming payment.date is a timestamp
+                    const date = new Date(timestamp);
+                    dateCell.textContent = date.toLocaleString();
                     const upduesCell = document.createElement("td");
                     upduesCell.textContent = payment.updues;
                     const pendduesCell = document.createElement("td");
                     pendduesCell.textContent = payment.penddues;
-                    // const receiptCell = document.createElement("td");
-                    // receiptCell.appendChild(viewReceiptLink);
+                    const receiptCell = document.createElement("td");
+                    receiptCell.appendChild(viewReceiptLink);
     
                     // Append cells to the row
                     row.appendChild(idCell);
@@ -131,8 +157,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     // Append the row to the table
                     tbody.appendChild(row);
                 });
+    
+                // Now that paymentHistory is populated, you can call populatePaymentHistory
+                populatePaymentHistory();
             } else {
-                console.error("Error fetching payment history.");
+                console.error("Error fetching data.");
             }
         } catch (error) {
             console.error("An error occurred:", error);

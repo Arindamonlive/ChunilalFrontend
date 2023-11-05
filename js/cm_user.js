@@ -3,11 +3,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
     loginForm.addEventListener("submit",  async (event) =>  {
         const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
+        let email = document.getElementById("email").value;
         const phoneNumber = document.getElementById("username").value;
         const password = document.getElementById("password").value;
+    
+        const minPasswordLength = 6; 
+        const maxPasswordLength = 20; 
 
-        
+        if (password.length < minPasswordLength || password.length > maxPasswordLength) {
+            alert(`Password must be between ${minPasswordLength} and ${maxPasswordLength} characters.`);
+            return;
+        }
+
+        const lengthPhoneNumber=10;
+
+        if (phoneNumber.length !== lengthPhoneNumber || !/^\d+$/.test(phoneNumber)) {
+            alert(`Phone number must be 10 characters and should be numeric.`);
+            return;
+        }
+
+        if (!email) {
+            email = "NA";
+        }
+
+
+
             try {
                 const response = await fetch("http://localhost:8080/users/add", {
                     method: "POST",

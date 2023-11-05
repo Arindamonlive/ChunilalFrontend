@@ -128,7 +128,9 @@ async function fetchPaymentTable() {
                 const idCell = document.createElement("td");
                 idCell.textContent = payment.id;
                 const dateCell = document.createElement("td");
-                dateCell.textContent = payment.date;
+                const timestamp = payment.date; // Assuming payment.date is a timestamp
+                const date = new Date(timestamp);
+                dateCell.textContent = date.toLocaleString();
                 const upduesCell = document.createElement("td");
                 upduesCell.textContent = payment.updues;
                 const pendduesCell = document.createElement("td");
@@ -240,9 +242,11 @@ document.getElementById("support").addEventListener("click", () => {
     window.location.href = 'grievance.html';
 });
 
+const method="Online";
 async function makeUPayment() {
     // You can perform the payment process here
     const amountToPay = paymentAmount.udues;
+    
 
     // Assuming you have a payment gateway or some API to process the payment
     // You can make an API request to initiate the payment process
@@ -252,7 +256,7 @@ async function makeUPayment() {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ "flatDetails": userData.contactDetails,"paymentAmount": amountToPay}),
+            body: JSON.stringify({ "flatDetails": userData.contactDetails,"paymentAmount": amountToPay,"method":method }),
         });
 
         if (response.ok) {
@@ -285,7 +289,7 @@ async function makePPayment() {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ "flatDetails": userData.contactDetails,"dues": amountToPay}),
+            body: JSON.stringify({ "flatDetails": userData.contactDetails,"dues": amountToPay,"method":method}),
         });
 
         if (response.ok) {

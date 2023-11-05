@@ -6,13 +6,15 @@
     <title>Adding Flat Monthly Maintenance of Balia Chunilal Cultural Association Committee</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.png">
     <link rel="stylesheet" href="css\gstyle.css">
+    
 </head>
 <body>
+    <button class="home" type="submit">Home</button>
     <header>
-        <h1>Flat Monthly Maintenance</h1>
+        <h1>Offline Payment Entry</h1>
     </header>
     <form id="form">       
-        <h2>Name:</h2>
+        <h2>Phone Number:</h2>
         <!-- <textarea rows="2.5" cols="50" placeholder="name"></textarea> -->
         <div class="input-container">
             <!-- <label for="name">Username</label> -->
@@ -21,28 +23,31 @@
         </div>
 
 
-        <h2>Monthly Maintenance Amount:</h2>
+        <h2>Monthly Maintenance Paid:</h2>
         <!-- <textarea rows="2.5" cols="50" placeholder="email"></textarea> -->
         <div class="input-container">
             <!-- <label for="email">Username</label> -->
-            <textarea rows="2.5" cols="50" type="text" id="amount" name="amount" required></textarea>
+            <textarea rows="2.5" cols="50" type="text" id="amount" name="amount" ></textarea>
             <!-- <input type="text" id="email" name="email" required> -->
         </div>
 
-        <h2>Monthly Maintenance Due Amount:</h2>
+        <h2>Monthly Maintenance Due Paid:</h2>
         <!-- <textarea rows="2.5" cols="50" placeholder="email"></textarea> -->
         <div class="input-container">
             <!-- <label for="email">Username</label> -->
             <textarea rows="2.5" cols="50" type="text" id="dueAmount" name="dueAmount" ></textarea>
             <!-- <input type="text" id="email" name="email" required> -->
         </div>
-
-
-
- 
-        <button class="submit-button" type="submit">Submit</button>   
+        <button class="submit_amount" type="submit">Submit Maintenance</button> 
+        <button class="submit_due" type="submit">Submit Due</button> 
 </form>
+    
     <!-- <button class="submit-button">Submit</button> -->
-    <script src="js/cm_flatmember.js"></script>
+    <script src="js/addOfflinePayment.js"></script>
+    <script>
+        document.querySelector(".home").addEventListener("click", function () {
+            window.location.href = "committeepage.html";
+        });
+    </script>
 </body>
 </html>

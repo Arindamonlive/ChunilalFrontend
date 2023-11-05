@@ -4,9 +4,22 @@ document.addEventListener("DOMContentLoaded", function () {
     loginForm.addEventListener("submit",  async (event) =>  {
         const flatDetails = document.getElementById("flatDetails").value;
         const amount = document.getElementById("amount").value;
-        // const blockNumber = document.getElementById("blockNumber").value;
-        const dueAmount = 0;
+        const dueAmount = document.getElementById("dueAmount").value;
+        // const dueAmount = 0;
 
+        if (!dueAmount) {
+            dueAmount == 0;
+        }
+
+        if (!/^\d+$/.test(amount)) {
+            alert(`Amount should be numeric.`);
+            return;
+        }
+
+        // if (!/^\d+$/.test(dueAmount)) {
+        //     alert(`Due Amount should be numeric.`);
+        //     return;
+        // }
 
         
             try {
