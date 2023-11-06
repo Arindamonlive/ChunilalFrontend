@@ -8,25 +8,25 @@
     <link rel="stylesheet" href="css\gstyle.css">
     <button class="home" type="submit">Home</button>
     <style>
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    table, th, td {
-        border: 1px solid #ccc;
-    }
-    th, td {
-        padding: 8px;
-        text-align: left;
-    }
-    .generate-button {
-        margin-top: 20px;
-        padding: 10px 20px;
-        background-color: #007BFF;
-        color: white;
-        border: none;
-        cursor: pointer;
-    }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        .generate-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -37,6 +37,9 @@
     <main>
         <div class="right-column">
             <h2>Payment History</h2>
+            <label for="datePicker">Select a date: </label>
+            <input type="date" id="datePicker">
+            <button class="generate-button" onclick="showCollection()">Show Collection</button>
             <table id="paymentTable">
                 <thead>
                     <tr>
@@ -48,10 +51,12 @@
                         <th>Balance</th>
                         <th>Deficit</th>
                     </tr>
-                </thead> 
-                <tbody>
+                </thead>
+                <tbody id="paymentTableBody">
                     <!-- Payment history rows will be added here dynamically -->
-                </tbody>     
+                </tbody>
+            </table>
+        </div>
     </main>
     <script src="../js/cm_account.js"></script>
     <script>

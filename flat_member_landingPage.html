@@ -49,5 +49,15 @@
         <button id="makePPayment">Pay Dues</button>
     </div>
     <script src="../js/flat_member_landingPage.js"></script>
+    <script>
+        setTimeout(function() {
+          window.location.href = "flat_member.html"; 
+        }, 900000);
+      </script>
+      <script>
+        if (performance.navigation.type === 2) {
+          window.location.href = "flat_member.html";
+        }
+      </script>
 </body>
 </html>

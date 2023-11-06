@@ -22,7 +22,7 @@
             <li><a href="cm_account.html">Accounts</a></li>
             <li><a href="addDetails.html">Flat Member Entry</a></li>
             <li><a href="addOfflinePayment.html">Offline Payment Entry</a></li>
-            <li><a href="addExpense.html">Expense Entry</a></li>
+            <li><a href="addExpense.html">Financial Entry</a></li>
             <!-- <li><a href="cm_user.html">Add Login Details</a></li>
             <li><a href="cm_flatMember.html">Add Maintenance Amount</a></li>
             <li><a href="cm_flatSupport.html">Add Flat Details</a></li> -->
@@ -79,5 +79,15 @@
             document.getElementById("logoutButton").addEventListener("click", logout);
         });
     </script>
+        <script>
+            setTimeout(function() {
+              window.location.href = "committee.html"; 
+            }, 900000);
+          </script>
+          <script>
+            if (performance.navigation.type === 2) {
+              window.location.href = "committee.html";
+            }
+          </script>
 </body>
 </html>

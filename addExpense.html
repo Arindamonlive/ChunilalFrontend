@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Entry of Balia Chunilal Cultural Association Committee</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" href="css\gstyle.css">
+    <button class="home" type="submit">Home</button>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        .generate-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Financial Entry</h1>
+    </header>
+    
+    <main>
+
+
+        <form id="form">  
+            
+            <div class="right-column">
+                <h2></h2>
+                <label for="datePicker">Select a date: </label>
+                <input type="date" id="datePicker">
+                    </thead>
+                    <tbody id="paymentTableBody">
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Total Collection:</h2>
+            <!-- <textarea rows="2.5" cols="50" placeholder="name"></textarea> -->
+            <div class="input-container">
+                <!-- <label for="name">Username</label> -->
+                <textarea rows="2.5" cols="50" type="text" id="amount" name="amount" required></textarea>
+                <!-- <input type="text" id="name" name="name" required> -->
+            </div>
+    
+            <h2>Total Expense:</h2>
+            <!-- <textarea rows="2.5" cols="50" placeholder="email"></textarea> -->
+            <div class="input-container">
+                <!-- <label for="email">Username</label> -->
+                <textarea rows="2.5" cols="50" type="text" id="expense" name="expense" ></textarea>
+                <!-- <input type="text" id="email" name="email" required> -->
+            </div>
+
+            <button class="submit-button" type="submit">Submit</button>   
+    </form>
+    </main>
+    <script src="../js/cm_account.js"></script>
+    <script>
+        document.querySelector(".home").addEventListener("click", function () {
+            window.location.href = "committeepage.html";
+        });
+    </script>
+</body>
+</html>
