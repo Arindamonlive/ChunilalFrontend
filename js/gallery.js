@@ -1,5 +1,5 @@
 const imageFolder = 'img/'; 
-const imageList = ['apt.jpg', 'aptn.jpg', 'bcg.jpg'];
+let imageList = ['apt.jpg', 'aptn.jpg', 'bcg.jpg','favicon.png'];
 let currentIndex = 0;
 
 const imageElement = document.getElementById('image');
@@ -7,9 +7,13 @@ const prevButton = document.getElementById('prevBtn');
 const nextButton = document.getElementById('nextBtn');
 
 function showImage(index) {
-    const imageUrl = imageFolder + imageList[index];
+    let imageUrl = imageFolder + imageList[index];
     imageElement.src = imageUrl;
 }
+
+// function showImage(index){
+    
+// }
 
 function prevImage() {
     currentIndex = (currentIndex - 1 + imageList.length) % imageList.length;
