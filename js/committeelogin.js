@@ -75,10 +75,10 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             if (response.ok) {
-                // Redirect to the landing page upon successful login
+                
                 window.location.href = "committeepage.html";
             } else {
-                // Handle login failure
+                
                 const errorMessage = await response.text();
                 alert(`Login failed: ${errorMessage}`);
             }

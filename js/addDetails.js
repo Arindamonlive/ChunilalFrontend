@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const loginForm = document.getElementById("form");
 
     loginForm.addEventListener("submit", async (event) => {
-        event.preventDefault(); // Prevent the default form submission
+        event.preventDefault(); 
 
         const name = document.getElementById("name").value;
         let email = document.getElementById("email").value;
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Make the API call to add user data
+        
         try {
             const userResponse = await fetch("http://localhost:8080/users/add", {
                 method: "POST",
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Make the API call to add flat data
+        
         try {
             const flatResponse = await fetch("http://localhost:8080/flat/add", {
                 method: "POST",
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Make the API call to add flat details
+        
         try {
             const detailsResponse = await fetch("http://localhost:8080/flat-details/addAmount", {
                 method: "POST",
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // If all API calls were successful, redirect to "committeepage.html"
+        
         window.location.href = "committeepage.html";
     });
 });

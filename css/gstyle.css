@@ -35,9 +35,9 @@ body {
 }
 
 .input-container input {
-    width: 50%; /* Make the input element 100% wide within the container */
-    padding: 10px; /* Add padding for spacing inside the input */
-    font-size: 16px; /* Adjust the font size */
+    width: 50%; 
+    padding: 10px; 
+    font-size: 16px; 
 }
 
 

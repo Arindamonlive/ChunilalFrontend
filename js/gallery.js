@@ -1,19 +1,22 @@
-const imageFolder = 'img/'; 
-let imageList = ['apt.jpg', 'aptn.jpg', 'bcg.jpg','favicon.png'];
+// js/gallery.js
+
+const imageFolder = 'img/';
+let imageList = ['apt.jpg', 'aptn.jpg', 'bcg.jpg', 'favicon.png'];
 let currentIndex = 0;
 
 const imageElement = document.getElementById('image');
 const prevButton = document.getElementById('prevBtn');
 const nextButton = document.getElementById('nextBtn');
+const homeButton = document.getElementById('home');
+
+homeButton.addEventListener('click', function () {
+    window.location.href = "index.html";
+});
 
 function showImage(index) {
     let imageUrl = imageFolder + imageList[index];
     imageElement.src = imageUrl;
 }
-
-// function showImage(index){
-    
-// }
 
 function prevImage() {
     currentIndex = (currentIndex - 1 + imageList.length) % imageList.length;
