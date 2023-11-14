@@ -11,10 +11,10 @@ async function announcement() {
             const data = await response.json();
             console.log("API Response:", data);
 
-            // Clear existing data
+            
             announcementsData.length = 0;
 
-            // Push announcements from the API into the announcementsData array
+            
             data.forEach(item => {
                 announcementsData.push({
                     title: item.announce
@@ -32,7 +32,7 @@ function populateAnnouncementsData() {
     const announcementList = document.getElementById("announcement-list");
     announcementList.innerHTML = '';
 
-    // Get the most recent announcement (highest index)
+    
     const mostRecentAnnouncement = announcementsData[announcementsData.length - 1];
 
     if (mostRecentAnnouncement) {

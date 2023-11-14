@@ -28,8 +28,8 @@ header {
     padding: 20px;
 }
 .table-container {
-    max-height: 150px; /* Adjust the height as needed */
-    overflow-y: scroll; /* Add a vertical scrollbar when needed */
+    max-height: 150px; 
+    overflow-y: scroll; 
 }
 table {
     width: 100%;
@@ -46,8 +46,8 @@ th, td {
 thead {
     background-color: #f2f2f2;
     position: sticky;
-    top: 0; /* Stick to the top of the container */
-    z-index: 1; /* Ensure the header is above the table body */
+    top: 0; 
+    z-index: 1; 
 }
 .generate-button {
     margin-top: 20px;

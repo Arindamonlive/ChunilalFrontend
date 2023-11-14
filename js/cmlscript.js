@@ -22,10 +22,10 @@ async function announcement() {
             const data = await response.json();
             console.log("API Response:", data);
 
-            // Clear existing data
+            
             announcementsData.length = 0;
 
-            // Push announcements from the API into the announcementsData array
+            
             data.forEach(item => {
                 announcementsData.push({
                     title: item.announce
@@ -93,7 +93,7 @@ function populateGrievanceData() {
     const grievanceList = document.getElementById("grievance-list");
     grievanceList.innerHTML = '';
 
-    // Get the 5 most recent grievances
+    
     const latestGrievances = grievanceData.slice(-5);
 
     latestGrievances.forEach(grievance => {
@@ -146,7 +146,7 @@ function populateQueriesData() {
     const queriesList = document.getElementById("queries-list");
     queriesList.innerHTML = '';
 
-    // Get the 5 most recent grievances
+    
     const latestQueries = queriesData.slice(-4);
 
     latestQueries.forEach(queries => {
